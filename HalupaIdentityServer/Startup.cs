@@ -14,15 +14,22 @@ namespace HalupaIdentityServer
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "IdentityServer.Cookie";
+                config.LoginPath = "/Auth/Login";
+                config.LogoutPath = "/Auth/Logout";
+            });
             services
                 .AddIdentityServer()
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryClients(Configuration.GetClients())
                 .AddInMemoryApiScopes(Configuration.GetScopes())
                 .AddDeveloperSigningCredential();
-
             services
-                .AddControllers();
+                .AddCors();
+            services
+                .AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -30,6 +37,7 @@ namespace HalupaIdentityServer
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
 
             app.UseRouting();
