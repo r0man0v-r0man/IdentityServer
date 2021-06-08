@@ -15,9 +15,9 @@ namespace HalupaIdentityServer
             };
         public static IEnumerable<ApiResource> GetApis() => new List<ApiResource>
         {
-            new ApiResource("HalupaApi")
+            new ApiResource("halupaApi")
             {
-                Scopes = { "HalupaApi" }
+                Scopes = { "halupaApi" }
             }
         };
 
@@ -35,7 +35,7 @@ namespace HalupaIdentityServer
                 AllowedScopes = {
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    "HalupaApi"
+                    "halupaApi"
                 },
                 RequireConsent = false,
                 AllowedCorsOrigins = { "http://localhost:4200" },
@@ -47,7 +47,7 @@ namespace HalupaIdentityServer
         {
             new ApiScope(IdentityServerConstants.StandardScopes.OpenId),
             new ApiScope(IdentityServerConstants.StandardScopes.Profile),
-            new ApiScope("HalupaApi")
+            new ApiScope("halupaApi")
         };
     }
 }
