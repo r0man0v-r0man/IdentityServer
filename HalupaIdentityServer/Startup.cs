@@ -39,6 +39,7 @@ namespace HalupaIdentityServer
             })
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
+
             services.ConfigureApplicationCookie(config =>
             {
                 config.Cookie.Name = "IdentityServer.Cookie";
