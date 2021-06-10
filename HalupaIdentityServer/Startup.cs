@@ -81,6 +81,7 @@ namespace HalupaIdentityServer
             {
                 endpoints.MapDefaultControllerRoute();
             });
+            app.UseStaticFiles();
         }
     }
 }
