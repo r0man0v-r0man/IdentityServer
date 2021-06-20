@@ -1,10 +1,6 @@
-﻿using IdentityModel;
-using IdentityServer4;
+﻿using IdentityServer4;
 using IdentityServer4.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HalupaIdentityServer
 {
@@ -15,12 +11,13 @@ namespace HalupaIdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile()
+                
             };
         public static IEnumerable<ApiResource> GetApis() => new List<ApiResource>
         {
-            new ApiResource("HalupaApi")
+            new ApiResource("halupaApi")
             {
-                Scopes = { "HalupaApi" }
+                Scopes = { "halupaApi" }
             }
         };
 
@@ -34,11 +31,11 @@ namespace HalupaIdentityServer
                 RequireClientSecret = false,
                 RedirectUris = { "http://localhost:4200" },
                 PostLogoutRedirectUris = { "http://localhost:4200" },
-
+                
                 AllowedScopes = {
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    "HalupaApi"
+                    "halupaApi"
                 },
                 RequireConsent = false,
                 AllowedCorsOrigins = { "http://localhost:4200" },
@@ -50,7 +47,7 @@ namespace HalupaIdentityServer
         {
             new ApiScope(IdentityServerConstants.StandardScopes.OpenId),
             new ApiScope(IdentityServerConstants.StandardScopes.Profile),
-            new ApiScope("HalupaApi")
+            new ApiScope("halupaApi")
         };
     }
 }
