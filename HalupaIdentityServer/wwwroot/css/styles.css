@@ -31,3 +31,20 @@ body {
 .sub-logo{
     font-size: xx-small;
 }
+h1{
+    text-align: center;
+}
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+.form-item:not(:last-child) {
+    margin-bottom: .3em;
+}
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: .5em;
+    align-items: baseline;
+}
