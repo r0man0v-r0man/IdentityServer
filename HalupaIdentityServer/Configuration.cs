@@ -37,6 +37,7 @@ namespace HalupaIdentityServer
 
                 AllowedScopes = {
                     IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Profile,
                     "HalupaApi"
                 },
                 RequireConsent = false,
@@ -48,6 +49,7 @@ namespace HalupaIdentityServer
         public static IEnumerable<ApiScope> GetScopes() => new List<ApiScope>
         {
             new ApiScope(IdentityServerConstants.StandardScopes.OpenId),
+            new ApiScope(IdentityServerConstants.StandardScopes.Profile),
             new ApiScope("HalupaApi")
         };
     }
